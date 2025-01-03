@@ -1,0 +1,124 @@
+.task-page
+    width: 100%
+
+
+.task-header
+    margin-bottom: 10px
+    height: 50px
+    
+    display: flex
+    justify-content: start
+    align-items: center
+    gap: 20px
+
+
+.task-card
+    width: 100%
+    height: 64px
+    padding: 7px
+    border-radius: 5px
+
+    background-color: rgba(0, 0, 0, 0.2)
+    outline: 1px solid rgba(96, 252, 255, 0.3)
+
+
+    display: flex
+    justify-content: space-between
+    gap: 10px
+    overflow: hidden
+
+    .card-main-info
+        margin-left: 5px
+        width: 0
+        flex: 1 1 auto
+        
+        display: flex
+        flex-direction: row
+        gap: 7px
+
+        overflow: hidden
+
+        .first-part
+            height: 100%
+            font-size: 18px
+
+            display: flex
+            flex-direction: column
+            justify-content: center
+
+            .task-completion-button
+                // height: 100%
+                width: 24px
+                border-radius: 5px
+
+            .task-edit-form
+                text-align: center
+                user-select: none
+
+        .second-part
+
+            .card-title
+                font-size: 18px
+                line-height: 26px
+                color: #fcff48
+                white-space: nowrap
+                overflow: hidden
+                text-overflow: ellipsis
+        
+            .card-date-space
+                font-size: 14px
+                color: rgba(255, 255, 255, 0.6)
+
+
+    .card-meta-data
+        padding: 0 5px
+        flex: 0 0 auto
+        display: flex
+        gap: 10px
+        
+
+        .md-parameters-wrapper
+            padding: 0 10px
+            display: flex
+            flex-direction: column
+            align-items: left
+            justify-content: center
+            gap: 5px
+
+            border-radius: 10px
+            background-color: rgba(0, 0, 0, 0.1)
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15)
+
+            .md-parameter
+                height: 14px
+                display: flex
+                align-items: center
+                gap: 1px
+
+                font-size: 10px
+                color: rgba(255, 255, 255, 0.6)
+                font-style: italic
+                font-weight: bold
+
+                cursor: pointer
+                transition-property: color
+                transition-duration: 0.15s
+
+                &:hover
+                    color: rgba(255, 255, 255, 0.8)
+
+
+        .card-options
+            padding: 0 5px
+            display: flex
+            align-items: center
+            justify-content: center
+            gap: 5px
+
+            border-radius: 10px
+            background-color: rgba(0, 0, 0, 0.1)
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15)
+
+            button
+                height: 100%
+                width: 28px

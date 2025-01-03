@@ -1,0 +1,35 @@
+.date-picker
+    margin-left: auto
+    display: flex
+    align-items: center
+    gap: 5px
+
+    > input
+        width: 90px
+        background-color: #101010
+        text-align: right
+
+
+
+.dialog-overlay
+    display: block
+    visibility: collapse
+    opacity: 0
+    border-radius: 15px
+    transition-property: opacity, visibility
+    transition-duration: .2s
+    overflow: hidden
+    
+    &::backdrop
+        background: rgba(0, 0, 0, 0.5)
+    
+    &[open]
+        opacity: 1
+        visibility: visible
+
+    .dialog-content
+        padding: 25px
+        
+        background-color: #fff
+        box-shadow: 0 0 75px 25px #000
+    
