@@ -1,0 +1,42 @@
+#root {
+	width: 100vw;
+	height: 100vh;
+
+	overflow: hidden;
+}
+
+.app {
+	display: flex;
+	flex-direction: column;
+
+	height: 100vh;
+	width: 100vw;
+	padding: 0 25px;
+}
+.screen {
+	margin-bottom: 20px;
+	padding: 10px 20px 20px 20px;
+	border-radius: 4px;
+	outline: 2px solid rgba(96, 252, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.1);
+	overflow: auto;
+	flex-grow: 1;
+
+	scrollbar-width: thin;
+	scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+}
+
+.screen::-webkit-scrollbar {
+	width: 8px;
+}
+
+.screen::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.screen::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 10px;
+	border: 2px solid transparent;
+	background-clip: content-box;
+}

@@ -1,0 +1,115 @@
+.modal-window
+    width: 100vw
+    height: 100dvh
+
+    position: absolute
+    left: 0
+    top: 0
+
+    background-color: rgba(0, 0, 0, 0.7)
+    opacity: 0
+    visibility: hidden
+    
+    // display: flex
+    // align-items: center
+    // justify-content: center
+    align-items: center
+    
+    transition-property: opacity, visibility
+    transition-duration: 0.15s
+    overflow: auto
+
+    &.open
+        opacity: 1
+        visibility: visible
+
+    &::-webkit-scrollbar
+        display: none
+
+    .modal-window-content
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+
+        display: inline-block
+        min-height: 0
+        padding: 25px 0
+
+
+        // ============================
+        .form
+            padding: 25px
+            min-width: 420px
+            overflow: hidden
+
+            background-color: #393939
+            border: 2px solid rgb(255, 179, 57)
+            border-radius: 25px
+
+            flex-grow: 1
+            display: flex
+            flex-direction: column
+            gap: 15px
+
+            .form-title
+                margin-bottom: 30px
+                font-size: 26px
+                color: #fff
+                text-align: center
+                user-select: none
+            
+            .field-container
+                display: flex
+                flex-direction: column
+
+                & > label
+                    padding-left: 14px
+                    margin-bottom: -17px
+                    z-index: 1
+                    font-size: 11px
+                    color: #838383
+
+                & > textarea
+                    resize: none
+                    height: 100px
+                
+                & > input, & > textarea
+                    border-radius: 10px
+                    padding: 14px
+                    font-size: 16px
+
+                    border: none
+                    box-shadow: inset 5px #000
+                    background-color: #101010
+
+                    color: #fff
+                    color-scheme: dark
+
+                    transition-property: box-shadow, background-color
+                    transition-duration: 0.2s
+
+                    &:focus
+                        outline: none
+                        // box-shadow: 0 0 3px 1px rgb(255, 179, 57)
+                        box-shadow: 0 0 3px 1px rgba(31, 204, 77, 0.7)
+                        background-color: #00241e
+                    
+                    &:disabled
+                        color: #adadad
+                        background-color: #242424
+
+                    // &::-webkit-calendar-picker-indicator
+                    //     filter: invert(1)
+            
+            & > button
+                height: 44px
+                border-radius: 8px
+                background-color: #d2c85d
+                font-size: 17px
+                color: #434343
+                font-weight: bold
+
+                transition-property: background-color
+                transition-duration: 0.2s
+
+                place-items: center
