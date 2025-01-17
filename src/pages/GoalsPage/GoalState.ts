@@ -6,15 +6,14 @@ import {
 	GoalPriority,
 	GoalComplexity,
 } from '../../types/goal'
-import useGoalTask from '../../storage/GoalTask'
 
 interface GoalState {
 	goals: Goal[]
 	addGoal: (goal: NewGoalData) => void
 	updateGoal: (goal: Goal) => void
 	deleteGoal: (goal: number) => void
-	addTaskToGoal: (goalId: number, taskId: number) => void
-	removeTaskFromGoal: (goalId: number, taskId: number) => void
+	// addTaskToGoal: (goalId: number, taskId: number) => void
+	// removeTaskFromGoal: (goalId: number, taskId: number) => void
 	getGoalById: (id: number) => Goal | null
 	correctGoalDates: () => void
 }
@@ -57,14 +56,12 @@ const useGoalState = create<GoalState>()(
 					...state,
 					goals: state.goals.filter((goal) => goal.id !== goalId),
 				})),
-			addTaskToGoal: (goalId, taskId) => {
-				const addLink = useGoalTask((state) => state.addLink)
-				addLink(taskId, goalId)
-			},
-			removeTaskFromGoal: (goalId, taskId) => {
-				const deleteLink = useGoalTask((state) => state.deleteLink)
-				deleteLink(taskId, goalId)
-			},
+			// addTaskToGoal: (goalId, taskId) => {
+			// 	return
+			// },
+			// removeTaskFromGoal: (goalId, taskId) => {
+			// 	return
+			// },
 			getGoalById: (goalId) => {
 				return get().goals.find((goal) => goal.id === goalId) || null
 			},

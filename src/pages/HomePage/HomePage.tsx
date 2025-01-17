@@ -9,6 +9,7 @@ const HomePage = () => {
 			}}
 		>
 			<h1>Home Page</h1>
+			<canvas className='w-full h-10'> 123 </canvas>
 		</div>
 	)
 }

@@ -31,7 +31,6 @@ import {
 import FieldDateTime from '../../../../../form/FieldDateTime/FieldDateTime'
 import useTaskState from '../../../../../../pages/TasksPage/TaskState'
 import { Task } from '../../../../../../types/task'
-import useGoalTask from '../../../../../../storage/GoalTask'
 
 interface GoalEditorFormProps {
 	goalId: number
@@ -62,9 +61,6 @@ const GoalEditorForm = ({ goalId }: GoalEditorFormProps) => {
 	const close = useModalWindowState((state) => state.close)
 	const updateGoal = useGoalState((state) => state.updateGoal)
 
-	const getTasksByGoal = useGoalTask((state) => state.getTasksByGoal)
-	const reLinkAll = useGoalTask((state) => state.reLinkAll)
-
 	const {
 		register,
 		handleSubmit,
@@ -87,7 +83,7 @@ const GoalEditorForm = ({ goalId }: GoalEditorFormProps) => {
 			reason: startData.reason,
 			start_dttm: startData.start_dttm,
 			finish_dttm: startData.finish_dttm,
-			tasks: getTasksByGoal(startData.id),
+			tasks: [],
 		})
 	}, [])
 
@@ -106,7 +102,7 @@ const GoalEditorForm = ({ goalId }: GoalEditorFormProps) => {
 			finish_dttm: data.finish_dttm ? new Date(data.finish_dttm) : null,
 		}
 
-		reLinkAll(startData.id, data.tasks)
+		// reLinkAll(startData.id, data.tasks)
 
 		//
 		console.log('\n\nСохраняем следующее:')

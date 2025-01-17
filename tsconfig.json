@@ -1,14 +1,26 @@
 {
+	"compilerOptions": {
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react-jsx",
+		"strict": true,
+		// REQUIRED TYPE IMPORT
+		"verbatimModuleSyntax": true,
+		"esModuleInterop": true,
+
+		"types": ["node"],
+		// Alias
+		"baseUrl": "/src",
+		"paths": {
+			"@src/components/": ["components/"],
+			"@/*": ["./*"]
+		}
+	},
+
 	"files": [],
 	"references": [
 		{ "path": "./tsconfig.app.json" },
 		{ "path": "./tsconfig.node.json" }
 	]
-	// "compilerOptions": {
-	// 	"typeRoots": ["./node_modules/@types"],
-	// 	"baseUrl": ".",
-	// 	"paths": {
-	// 		"@tauri-apps/*": ["node_modules/@tauri-apps/*"]
-	// 	}
-	// }
+	// "include": ["src"]
 }
